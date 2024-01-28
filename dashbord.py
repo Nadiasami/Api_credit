@@ -68,6 +68,9 @@ if st.button("Run"):
                 shap.plots.waterfall(exp[0], max_display=30, show=True)
                 st.pyplot(fig)
 
+                fig, ax = plt.subplots(figsize=(20, 20))
+                sns.barplot(x="importance", y="feature", data=pd.DataFrame(response_data["feature_global"]))
+                st.pyplot(fig)
 
                 # Effacer automatiquement l'identifiant actuel après avoir traité l'appel API
                 id = ""
