@@ -9,9 +9,6 @@ current_directory = os.path.dirname(os.path.realpath(__file__))
 model_path = os.path.join(current_directory,"model.pkl")
 model=joblib.load(model_path)
 
-# charger le modele
-model = joblib.load("model.pkl")
-
 def prepare(ride):
     data = pd.DataFrame(ride)
     df_pred =data.drop(columns=data.columns[0])
