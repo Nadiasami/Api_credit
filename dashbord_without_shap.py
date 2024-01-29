@@ -62,12 +62,6 @@ if st.button("Run"):
                 elif prediction == 1:
                     message_container.markdown("<p style='color:red; font-size:40px;'>Le crédit ne sera pas accordé avec une probabilité de {:.2%}.</p>".format(probability), unsafe_allow_html=True)
 
-                # Afficher les valeurs SHAP (exemple)
-                exp = shap.Explanation(np.array(shap_values_data['values']),np.array(shap_values_data['base_values']), df_columns)
-                fig, ax = plt.subplots(figsize=(20, 20))
-                shap.plots.waterfall(exp[0], max_display=30, show=True)
-                st.pyplot(fig)
-
                 # Effacer automatiquement l'identifiant actuel après avoir traité l'appel API
                 id = ""
 
