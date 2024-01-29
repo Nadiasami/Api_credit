@@ -6,7 +6,7 @@ import os
 
 # charger le modèle
 current_directory = os.path.dirname(os.path.realpath(__file__))
-model_path = os.path.join(current_directory,"model.pkl")
+model_path = os.path.join(current_directory,"best_model_lightgbm.pkl")
 model=joblib.load(model_path)
 
 def prepare(ride):
