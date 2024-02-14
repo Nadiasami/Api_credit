@@ -11,8 +11,7 @@ model=joblib.load(model_path)
 
 def prepare(ride):
     data = pd.DataFrame(ride)
-    df_pred =data.drop(columns=data.columns[0])
-    return df_pred
+    return data
 
 def predicts(df_pred):
     prediction = model.predict(df_pred)[0]          
